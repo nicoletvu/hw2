@@ -111,6 +111,56 @@ new_movie_3["rated"] = "PG-13"
 new_movie_3["studio_id"] = wb["id"]
 new_movie_3.save
 
+# Inserting new rows into Actor model
+
+new_actor_1 = Actor.new
+new_actor_1["name"] = "Christian Bale"
+new_actor_1.save
+
+new_actor_2 = Actor.new
+new_actor_2["name"] = "Michael Caine"
+new_actor_2.save
+
+new_actor_3 = Actor.new
+new_actor_3["name"] = "Liam Neeson"
+new_actor_3.save
+
+new_actor_4 = Actor.new
+new_actor_4["name"] = "Katie Holmes"
+new_actor_4.save
+
+new_actor_5 = Actor.new
+new_actor_5["name"] = "Gary Oldman"
+new_actor_5.save
+
+new_actor_6 = Actor.new
+new_actor_6["name"] = "Heath Ledger"
+new_actor_6.save
+
+new_actor_7 = Actor.new
+new_actor_7["name"] = "Aaron Eckhart"
+new_actor_7.save
+
+new_actor_8 = Actor.new
+new_actor_8["name"] = "Maggie Gyllenhaal"
+new_actor_8.save
+
+new_actor_9 = Actor.new
+new_actor_9["name"] = "Tom Hardy"
+new_actor_9.save
+
+new_actor_10 = Actor.new
+new_actor_10["name"] = "Joseph Gordon-Levitt"
+new_actor_10.save
+
+new_actor_11 = Actor.new
+new_actor_11["name"] = "Anne Hathaway"
+new_actor_11.save
+
+
+
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
