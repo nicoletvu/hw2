@@ -250,24 +250,36 @@ puts "Movies"
 puts "======"
 puts ""
 
-# find studio of interest
-wb = Studio.find_by({"name" => "Warner Bros."})
+# Query the movies data and loop through the results to display the movies output.
 
-# now grab all movies where studio id = wb id
+# find studio of interest then grab all the movies where studio id = wb id
+wb = Studio.find_by({"name" => "Warner Bros."})
 wb_movies = Movie.where({"studio_id" => wb["id"]})
 
+# do the actual loop
 for movie in wb_movies
-    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{wb["name"]}"
+    puts "#{movie["title"]}        #{movie["year_released"]}         #{movie["rated"]}        #{wb["name"]}"
 end
 
-# Query the movies data and loop through the results to display the movies output.
-# TODO!
-
 # Prints a header for the cast output
-# puts ""
-# puts "Top Cast"
-# puts "========"
-# puts ""
+puts ""
+puts "Top Cast"
+puts "========"
+puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# TODO!
+# Loop through role table, attach values through movie id and actor id
+
+#  Nested loop: for each movie, get a list of roles for each movie; then for each role, get the actor for that role
+for movie in wb_movies
+    
+    movie_roles = Role.where({"movie_id" => movie["id"]})
+    
+    for role in movie_roles
+        #attach actor... actor_id from Role = id from Actor
+        movie_actor = Actor.find_by({"id" => role["actor_id"]})
+        puts "#{movie["title"]} #{movie_actor["name"]} #{role["character_name"]}"
+    end
+
+end
+
