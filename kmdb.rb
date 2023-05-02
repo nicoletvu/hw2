@@ -246,6 +246,7 @@ tdkr_role_5["character_name"] = "Selina Kyle"
 tdkr_role_5.save
 
 # Prints a header for the movies output
+puts ""
 puts "Movies"
 puts "======"
 puts ""
@@ -258,7 +259,7 @@ wb_movies = Movie.where({"studio_id" => wb["id"]})
 
 # do the actual loop
 for movie in wb_movies
-    puts "#{movie["title"]}        #{movie["year_released"]}         #{movie["rated"]}        #{wb["name"]}"
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{wb["name"]}"
 end
 
 # Prints a header for the cast output
@@ -268,7 +269,6 @@ puts "========"
 puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
-# Loop through role table, attach values through movie id and actor id
 
 #  Nested loop: for each movie, get a list of roles for each movie; then for each role, get the actor for that role
 for movie in wb_movies
