@@ -88,31 +88,28 @@ new_studio["name"] = "Warner Bros."
 new_studio.save # actually add to table
 
 # Inserting new rows into Movie model
-wb = Studio.find_by({"name" => "Warner Bros."})
-
 new_movie_1 = Movie.new
 new_movie_1["title"] = "Batman Begins"
 new_movie_1["year_released"] = 2005
 new_movie_1["rated"] = "PG-13"
-new_movie_1["studio_id"] = wb["id"]
+new_movie_1["studio_id"] = Studio.find_by({"name" => "Warner Bros."})["id"]
 new_movie_1.save
 
 new_movie_2 = Movie.new
 new_movie_2["title"] = "The Dark Knight"
 new_movie_2["year_released"] = 2008
 new_movie_2["rated"] = "PG-13"
-new_movie_2["studio_id"] = wb["id"]
+new_movie_2["studio_id"] = Studio.find_by({"name" => "Warner Bros."})["id"]
 new_movie_2.save
 
 new_movie_3 = Movie.new
 new_movie_3["title"] = "The Dark Knight Rises"
 new_movie_3["year_released"] = 2012
 new_movie_3["rated"] = "PG-13"
-new_movie_3["studio_id"] = wb["id"]
+new_movie_3["studio_id"] = Studio.find_by({"name" => "Warner Bros."})["id"]
 new_movie_3.save
 
 # Inserting new rows into Actor model
-
 new_actor_1 = Actor.new
 new_actor_1["name"] = "Christian Bale"
 new_actor_1.save
@@ -157,23 +154,26 @@ new_actor_11 = Actor.new
 new_actor_11["name"] = "Anne Hathaway"
 new_actor_11.save
 
-
-
-
+# Inserting new rows into Role model
+bb_role_1 = Role.new
+bb_role_1["movie_id"] = Movie.find_by({"title" => "Batman Begins"})["id"]
+bb_role_1["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
+bb_role_1["character_name"] = "Bruce Wayne"
+bb_role_1.save
 
 # Prints a header for the movies output
-puts "Movies"
-puts "======"
-puts ""
+# puts "Movies"
+# puts "======"
+# puts ""
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
 # Prints a header for the cast output
-puts ""
-puts "Top Cast"
-puts "========"
-puts ""
+# puts ""
+# puts "Top Cast"
+# puts "========"
+# puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
