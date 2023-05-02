@@ -246,9 +246,19 @@ tdkr_role_5["character_name"] = "Selina Kyle"
 tdkr_role_5.save
 
 # Prints a header for the movies output
-# puts "Movies"
-# puts "======"
-# puts ""
+puts "Movies"
+puts "======"
+puts ""
+
+# find studio of interest
+wb = Studio.find_by({"name" => "Warner Bros."})
+
+# now grab all movies where studio id = wb id
+wb_movies = Movie.where({"studio_id" => wb["id"]})
+
+for movie in wb_movies
+    puts "#{movie["title"]} #{movie["year_released"]} #{movie["rated"]} #{wb["name"]}"
+end
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
