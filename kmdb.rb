@@ -87,8 +87,29 @@ new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save # actually add to table
 
+# Inserting new rows into Movie model
+wb = Studio.find_by({"name" => "Warner Bros."})
 
+new_movie_1 = Movie.new
+new_movie_1["title"] = "Batman Begins"
+new_movie_1["year_released"] = 2005
+new_movie_1["rated"] = "PG-13"
+new_movie_1["studio_id"] = wb["id"]
+new_movie_1.save
 
+new_movie_2 = Movie.new
+new_movie_2["title"] = "The Dark Knight"
+new_movie_2["year_released"] = 2008
+new_movie_2["rated"] = "PG-13"
+new_movie_2["studio_id"] = wb["id"]
+new_movie_2.save
+
+new_movie_3 = Movie.new
+new_movie_3["title"] = "The Dark Knight Rises"
+new_movie_3["year_released"] = 2012
+new_movie_3["rated"] = "PG-13"
+new_movie_3["studio_id"] = wb["id"]
+new_movie_3.save
 
 # Prints a header for the movies output
 puts "Movies"
