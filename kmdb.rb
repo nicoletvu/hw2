@@ -161,6 +161,32 @@ bb_role_1["actor_id"] = Actor.find_by({"name" => "Christian Bale"})["id"]
 bb_role_1["character_name"] = "Bruce Wayne"
 bb_role_1.save
 
+bb_role_2 = Role.new
+bb_role_2["movie_id"] = Movie.find_by({"title" => "Batman Begins"})["id"]
+bb_role_2["actor_id"] = Actor.find_by({"name" => "Michael Caine"})["id"]
+bb_role_2["character_name"] = "Alfred"
+bb_role_2.save
+
+bb_role_3 = Role.new
+bb_role_3["movie_id"] = Movie.find_by({"title" => "Batman Begins"})["id"]
+bb_role_3["actor_id"] = Actor.find_by({"name" => "Liam Neeson"})["id"]
+bb_role_3["character_name"] = "Ra's Al Ghul"
+bb_role_3.save
+
+bb_role_4 = Role.new
+bb_role_4["movie_id"] = Movie.find_by({"title" => "Batman Begins"})["id"]
+bb_role_4["actor_id"] = Actor.find_by({"name" => "Katie Holmes"})["id"]
+bb_role_4["character_name"] = "Rachel Dawes"
+bb_role_4.save
+
+bb_role_5 = Role.new
+bb_role_5["movie_id"] = Movie.find_by({"title" => "Batman Begins"})["id"]
+bb_role_5["actor_id"] = Actor.find_by({"name" => "Gary Oldman"})["id"]
+bb_role_5["character_name"] = "Commissioner Gordon"
+bb_role_5.save
+
+
+
 # Prints a header for the movies output
 # puts "Movies"
 # puts "======"
